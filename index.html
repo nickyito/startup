@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>オーガニック流通基盤｜AICHI STARTUP BATTLE 2026 応募用草稿</title>
+<style>
+:root{
+  --bg:#f4f7f4;--paper:#fff;--ink:#17231b;--muted:#637168;--green:#1f6f4a;--green2:#3e8a63;
+  --dark:#113526;--pale:#eaf4ee;--line:#dce6df;--gold:#9e7624;--goldbg:#fff7e5;
+  --red:#aa4c46;--redbg:#fff3f1;--blue:#3f6f96;--bluebg:#edf4fa;--violet:#655493;
+  --violetbg:#f3f0fb;--teal:#206a68;--tealbg:#eaf7f6;--shadow:0 10px 32px rgba(22,54,39,.06)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+  line-height:1.68
+}
+.wrap{max-width:1200px;margin:auto;padding:26px 22px 72px}
+.hero{
+  background:
+    radial-gradient(circle at 91% 8%,rgba(255,255,255,.13),transparent 28%),
+    linear-gradient(135deg,#0e2f21,#1d6947 55%,#5b9a79);
+  color:white;border-radius:29px;padding:50px;box-shadow:0 20px 60px rgba(20,55,38,.17)
+}
+.stamp{font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:850;color:#cfe7d8}
+.hero h1{font-size:clamp(29px,4.5vw,50px);line-height:1.11;margin:8px 0 16px}
+.hero h1 .hero-subline{white-space:nowrap}
+.hero p{font-size:18px;max-width:970px;color:#edf7f1;margin:0}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.badge{font-size:12px;font-weight:760;padding:6px 10px;border-radius:999px;border:1px solid #ffffff33;background:#ffffff17}
+nav{
+  position:sticky;top:0;z-index:20;margin:18px 0 24px;padding:10px 12px;border:1px solid var(--line);
+  border-radius:14px;background:#f4f7f4ed;backdrop-filter:blur(10px);overflow:auto;white-space:nowrap
+}
+nav a{color:var(--green);font-weight:780;font-size:12.5px;text-decoration:none;margin-right:15px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:31px;margin:22px 0;box-shadow:var(--shadow)}
+h2{font-size:29px;line-height:1.25;color:var(--dark);margin:2px 0 16px}
+h3{font-size:20px;color:var(--green);margin:24px 0 10px}
+h4{font-size:16px;margin:8px 0 6px}
+p{margin:7px 0 12px}
+ul,ol{padding-left:22px}
+li{margin:5px 0}
+.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:840;color:#428663;margin-bottom:6px}
+.lead{font-size:18px;color:#31443a}
+.small{font-size:12.5px;color:var(--muted)}
+.tiny{font-size:11.5px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.card{border:1px solid var(--line);border-radius:16px;padding:17px;background:#fff}
+.soft{background:var(--pale)}.goldbg{background:var(--goldbg)}.redbg{background:var(--redbg)}
+.bluebg{background:var(--bluebg)}.violetbg{background:var(--violetbg)}.tealbg{background:var(--tealbg)}
+.metric{font-size:28px;font-weight:860;line-height:1.08;color:var(--dark)}
+.label{font-size:12px;color:var(--muted);margin-top:6px}
+table{width:100%;border-collapse:collapse;margin:13px 0;font-size:13.2px}
+th,td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f0f6f2;text-align:left;color:#274538}
+tr:last-child td{border-bottom:0}
+.market-comparison th:first-child,.market-comparison td:first-child{min-width:132px;white-space:nowrap}
+.market-comparison th:nth-child(2){min-width:112px}.market-comparison th:nth-child(3){min-width:132px}
+.market-comparison th:nth-child(4){min-width:155px}.market-comparison th:nth-child(5){min-width:140px}
+.tag{display:inline-block;padding:3px 8px;border-radius:999px;font-size:11.5px;font-weight:790;background:#edf4ef;color:#266441}
+.tag.gold{background:#fbf1d7;color:#735718}.tag.red{background:#fae9e6;color:#99433c}
+.tag.blue{background:#e8f1f8;color:#345f80}.tag.violet{background:#eee9f9;color:#5f4d8d}
+.callout{padding:16px 18px;border:1px solid #cfe3d6;background:#f6fbf8;border-radius:15px;margin:16px 0}
+.callout strong{color:var(--green)}
+.warn{border-color:#efcfca;background:#fff5f3}.warn strong{color:var(--red)}
+.idea{background:#133b29;color:white;border-color:#133b29}.idea strong{color:#c8f0d7}
+.quote{padding:15px 18px;border-left:5px solid var(--green);border-radius:10px;background:#f5faf7;font-weight:680;font-size:17px}
+.flow{display:flex;gap:7px;align-items:stretch;flex-wrap:wrap;margin:16px 0}
+.step{flex:1 1 125px;min-width:118px;padding:12px;border-radius:13px;background:var(--pale);border:1px solid #cfe2d6;text-align:center;font-size:12.3px;font-weight:740}
+.arrow{align-self:center;font-size:22px;font-weight:900;color:var(--green)}
+.code{background:#102219;color:#eaf8ef;border-radius:15px;padding:18px;white-space:pre-wrap;overflow:auto;font:12.5px/1.58 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.visual-diagram{border:1px solid var(--line);border-radius:18px;padding:20px;background:linear-gradient(180deg,#fbfdfb,#f6faf7);margin:16px 0}
+.diagram-title{font-size:11px;font-weight:850;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;text-align:center;margin-bottom:8px}
+.pill-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}.pill{background:#fff;border:1px solid #cbdad0;border-radius:999px;padding:8px 13px;font-size:12.5px;font-weight:760;color:var(--dark);box-shadow:0 3px 10px rgba(22,54,39,.03)}
+.diagram-arrow{text-align:center;color:var(--green);font-size:22px;font-weight:900;line-height:1.2;margin:9px 0}.diagram-arrow small{display:block;font-size:11.5px;color:var(--muted);font-weight:650;margin-top:3px}
+.service-hub{max-width:820px;margin:auto;background:#143c2a;color:white;border-radius:18px;padding:20px 22px;box-shadow:0 10px 26px rgba(20,60,42,.13)}.service-hub h4{font-size:19px;text-align:center;margin:0 0 14px;color:white}.hub-features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.hub-feature{background:#ffffff12;border:1px solid #ffffff24;border-radius:12px;padding:10px;font-size:12px;line-height:1.45;text-align:center}
+.funnel{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:16px 0}.funnel-step{position:relative;border:1px solid var(--line);border-radius:16px;padding:14px 12px;background:#fff;min-height:116px}.funnel-step:not(:last-child):after{content:'→';position:absolute;right:-10px;top:43%;z-index:2;color:var(--green);font-weight:900;font-size:19px}.funnel-step .fnum{font-size:27px;font-weight:880;color:var(--green);line-height:1}.funnel-step .ftitle{font-size:12.5px;font-weight:800;color:var(--dark);margin-top:7px}.funnel-step .fdesc{font-size:11.5px;color:var(--muted);margin-top:4px}.funnel-step.highlight{background:var(--pale);border-color:#b9d8c4}
+.economics{display:grid;grid-template-columns:1.05fr 48px 1.4fr 48px 1fr;gap:8px;align-items:stretch;margin:16px 0}.econ-card{border:1px solid var(--line);border-radius:17px;padding:17px;background:#fff}.econ-card h4{font-size:18px;color:var(--dark);margin:0 0 10px}.econ-card.result{background:var(--pale);border-color:#bddbc8}.econ-items{display:flex;flex-wrap:wrap;gap:7px}.econ-item{font-size:12px;font-weight:720;background:#f3f7f4;border:1px solid var(--line);border-radius:999px;padding:6px 9px}.econ-costs{margin:0;padding-left:18px;font-size:12px;color:#405047}.econ-op{display:grid;place-items:center;font-size:26px;font-weight:900;color:var(--green)}
+.data-system{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fbfdfb;margin:16px 0}.data-inputs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.data-card{border:1px solid #d3e0d7;border-radius:13px;background:#fff;padding:12px;text-align:center;font-size:12px;font-weight:740;color:var(--dark)}.decision-card{max-width:850px;margin:0 auto;background:var(--bluebg);border:1px solid #c9dceb;border-radius:16px;padding:16px 18px;text-align:center}.decision-card .dlabel{font-size:11px;font-weight:850;letter-spacing:.08em;color:var(--blue);margin-bottom:5px}.decision-card b{font-size:16px;color:#244f70}
+.phasegrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:14px 0}
+.phase{border:1px solid var(--line);border-radius:16px;padding:15px;background:#fff}
+.phase .num{font-size:11px;color:var(--green);font-weight:900;letter-spacing:.08em}
+.phase b{display:block;margin:4px 0 6px;color:var(--dark)}
+.phase p{font-size:12px;color:var(--muted);margin:0}
+.phase.critical{background:var(--pale);border-color:#bdd9c7}
+.phase.later{background:#fafafa}
+.gate{display:grid;grid-template-columns:220px 1fr 150px;gap:0;border:1px solid var(--line);border-radius:15px;overflow:hidden;margin:12px 0}
+.gate>div{padding:10px;border-bottom:1px solid var(--line)}
+.gate>div:nth-child(3n+1){font-weight:780;background:#f3f7f4}
+.gate>div:nth-last-child(-n+3){border-bottom:0}
+.note{font-size:12px;color:var(--muted);padding:10px 13px;border-radius:12px;background:#f7f9f7;border:1px dashed #cbd8cf}
+.money{font-variant-numeric:tabular-nums;font-weight:820;color:var(--dark)}
+.edge{font-weight:780;color:var(--green)}
+
+.northstar-section{
+  position:relative;overflow:hidden;
+  background:linear-gradient(145deg,#0f3224 0%,#174d35 54%,#28704e 100%);
+  border-color:#1d5a3e;color:#fff;
+  box-shadow:0 18px 48px rgba(18,58,40,.16)
+}
+.northstar-section:before{
+  content:"";position:absolute;width:360px;height:360px;border-radius:50%;
+  right:-130px;top:-150px;background:rgba(255,255,255,.07);pointer-events:none
+}
+.northstar-section .kicker{color:#bfe5cf}
+.northstar-section h2{color:#fff}
+.northstar-statement{
+  position:relative;z-index:1;margin:10px 0 20px;padding:22px 24px;
+  border:1px solid rgba(255,255,255,.22);border-radius:18px;
+  background:rgba(255,255,255,.10);font-size:clamp(20px,2.7vw,28px);font-weight:820;
+  line-height:1.5;box-shadow:inset 0 1px 0 rgba(255,255,255,.10)
+}
+.northstar-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px}
+.northstar-goal{
+  min-height:190px;padding:16px;border-radius:16px;
+  border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.94);color:var(--ink);
+  box-shadow:0 8px 22px rgba(6,34,22,.10)
+}
+.northstar-goal .goal-no{font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--green);margin-bottom:8px}
+.northstar-goal h3{font-size:17px;line-height:1.35;color:var(--dark);margin:0 0 8px}
+.northstar-goal .goal-direction{display:inline-block;padding:3px 8px;border-radius:999px;background:var(--pale);color:var(--green);font-size:11px;font-weight:820;margin-bottom:9px}
+.northstar-goal p{font-size:12.5px;color:#405047;margin:0}
+@media(max-width:950px){.northstar-grid{grid-template-columns:1fr 1fr}.northstar-goal{min-height:auto}}
+@media(max-width:560px){.northstar-grid{grid-template-columns:1fr}}
+
+.source a{color:#2d6d4b;word-break:break-all}
+.source li{margin-bottom:9px}
+.source details{border:1px solid var(--line);border-radius:16px;background:#fbfdfb;overflow:hidden}
+.source summary{cursor:pointer;list-style:none;padding:16px 18px;font-size:18px;font-weight:820;color:var(--dark);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.source summary::-webkit-details-marker{display:none}
+.source summary:after{content:"＋";color:var(--green);font-size:22px;font-weight:700;line-height:1}
+.source details[open] summary{border-bottom:1px solid var(--line);background:#f3f7f4}
+.source details[open] summary:after{content:"−"}
+.source .source-body{padding:8px 18px 16px}
+.footer{text-align:center;color:#6b786f;font-size:12px;padding:18px}
+@media(max-width:950px){
+  .hero h1 .hero-subline{white-space:normal}
+  .grid2,.grid3,.grid4,.phasegrid{grid-template-columns:1fr}
+  .hero{padding:31px 23px}section{padding:21px}
+  .gate{grid-template-columns:1fr}.gate>div{border-bottom:1px solid var(--line)}
+  .hub-features{grid-template-columns:1fr 1fr}.funnel{grid-template-columns:1fr 1fr 1fr}.funnel-step:not(:last-child):after{display:none}.economics{grid-template-columns:1fr}.econ-op{min-height:24px}.data-inputs{grid-template-columns:1fr 1fr}
+}
+@media print{nav{display:none}body{background:white}.hero,section{box-shadow:none}.wrap{max-width:none;padding:0}}
+</style>
+</head>
+<body><div class="wrap">
+
+<header class="hero">
+  <div class="stamp">AICHI STARTUP BATTLE 2026 / 応募用ビジネスアイデア草稿</div>
+  <h1>オーガニック流通基盤<br><span class="hero-subline">日本のオーガニックを「特別」から「日常」へ</span></h1>
+  <p>
+    小規模で分散した有機・環境配慮農家の供給を束ね、社員食堂・給食会社・ホテル・小売などの法人が、
+    「一つの仕入先」から買う感覚で安定して調達できる仕組みをつくる。
+    需要を先に確保し、調達・欠品代替・物流・請求を一体で支援することで、
+    有機農産物の高価格・不安定供給・小ロット物流という悪循環を崩す。
+  </p>
+  <div class="badges">
+    <span class="badge">法人向け調達</span><span class="badge">需要先行</span>
+    <span class="badge">複数農家の供給集約</span><span class="badge">在庫・物流資産を極小化</span>
+    <span class="badge">愛知・東海から実証</span><span class="badge">将来は全国流通基盤へ</span>
+  </div>
+</header>
+
+<nav>
+<a href="#exec">結論</a><a href="#s1">1. 市場の遅れ</a><a href="#s2">2. 目指す社会</a><a href="#s3">3. 取引障壁</a>
+<a href="#s4">4. 海外先行事例</a><a href="#s5">5. 解決策</a><a href="#s6">6. 競合・優位性</a>
+<a href="#s7">7. 事業の仕組み</a><a href="#s8">8. 成長段階</a><a href="#s9">9. 初期顧客</a>
+<a href="#s10">10. 90日実証</a><a href="#s11">11. KPI</a><a href="#s12">12. 資金計画</a>
+<a href="#s13">13. 収益性</a><a href="#s14">14. 競争力の蓄積</a><a href="#s15">15. まとめ</a><a href="#sources">出典</a>
+</nav>
+
+<section id="exec">
+<div class="kicker">要約</div>
+<h2>結論：有機農産物を「普通に仕入れられる」流通基盤をつくる</h2>
+
+<div class="grid4">
+  <div class="card soft"><div class="metric">課題</div><p>有機農産物は、小規模・分散・季節変動により、法人が必要な量を安定して仕入れにくい。</p></div>
+  <div class="card soft"><div class="metric">解決策</div><p>複数農家を束ね、発注・代替・物流・請求を一本化し、法人からは「一つの仕入先」に見せる。</p></div>
+  <div class="card soft"><div class="metric">最初の顧客</div><p>反復需要を作りやすい社員食堂・地域給食会社を中心に、ホテル・高価格外食を組み合わせる。</p></div>
+  <div class="card soft"><div class="metric">拡大</div><p>実取引データをもとに作付・共同物流・地域スーパーへ広げ、地域モデルを全国へ接続する。</p></div>
+</div>
+
+<div class="callout idea">
+<strong>本事業の本質：</strong>
+売り手と買い手を掲載するだけのマッチングサービスではない。
+<b>法人の必要量を実際に成立させる「調達代行・需給調整機能」</b>を提供し、
+有機農産物が既存の食品と同じように流通できる状態をつくる。
+</div>
+</section>
+
+<section id="s1">
+<div class="kicker">01 / 市場の現状</div>
+<h2>1. 諸外国と比較した日本のオーガニック市場の遅れ</h2>
+
+<div class="grid4">
+<div class="card redbg"><div class="metric">約2,400円 / 人</div><div class="label">🇯🇵 日本｜Organic年間1人当たり支出<br><span class="tiny">FiBL・2022年</span></div></div>
+<div class="card bluebg"><div class="metric">約3.26万円 / 人</div><div class="label">🇺🇸 米国｜日本の約13.5倍<br><span class="tiny">2024年・世界最大市場</span></div></div>
+<div class="card goldbg"><div class="metric">27.2%</div><div class="label">🇦🇹 オーストリア｜有機農地比率<br><b>日本0.9%の約30倍*</b></div></div>
+<div class="card soft"><div class="metric">約8.91万円 / 人</div><div class="label">🇨🇭 スイス｜世界最高の1人当たり支出<br><b>日本の約37倍</b></div></div>
+</div>
+
+<h3>主要国と比べると、日本の市場浸透はまだ低い</h3>
+<div style="overflow:auto">
+<table class="market-comparison" style="min-width:1080px">
+<tr>
+<th>国・地域</th><th>有機農地比率</th><th>Organic小売市場</th><th>食品市場に占めるOrganic</th><th>1人当たり年間支出</th><th>日本への示唆</th>
+</tr>
+<tr class="redbg">
+<td>🇯🇵 <b>日本</b></td>
+<td><b>0.9%</b></td>
+<td><b>約3,000億円</b></td>
+<td><b>0.3%</b></td>
+<td><b>約2,400円</b></td>
+<td>制度・売場は存在するが、購買額そのものが薄い。<b>「知っている」から「毎週買う」への転換余地が大きい。</b></td>
+</tr>
+<tr class="bluebg">
+<td>🇺🇸 <b>米国</b></td>
+<td><b>0.8%</b></td>
+<td><b>約11.2兆円</b></td>
+<td><b>約6%</b></td>
+<td><b>約3.26万円</b></td>
+<td><b>農地比率が低くても巨大な消費市場は成立する。</b> 55%がmass-market retailで販売され、専門店依存を脱している。</td>
+</tr>
+<tr class="bluebg">
+<td>🇨🇦 <b>カナダ</b></td>
+<td><b>1.9%</b></td>
+<td><b>約9,700億円</b></td>
+<td><b>3.4%</b></td>
+<td><b>約2.33万円</b></td>
+<td>生産比率はまだ低いが、市場浸透は日本より一段進む<b>「中間ベンチマーク」</b>。国内供給だけでなく輸出入を含む流通網で需要を支える。</td>
+</tr>
+<tr>
+<td>🇪🇺 <b>EU平均</b></td>
+<td><b>11.1%</b></td>
+<td><b>約9.17兆円</b></td>
+<td><b>4.5%</b></td>
+<td><b>約2.04万円</b></td>
+<td>20年で有機農地が3倍超へ拡大。<b>供給基盤と消費市場を同時に厚くした</b>地域全体の到達例。</td>
+</tr>
+<tr>
+<td>🇩🇪 <b>ドイツ</b></td>
+<td><b>11.5%</b></td>
+<td><b>約3.15兆円</b></td>
+<td><b>約6.5%</b></td>
+<td><b>約3.74万円</b></td>
+<td>Organic販売の<b>70%</b>を一般大手小売が担う。専門店カテゴリーではなく、通常小売の定番へ移行。</td>
+</tr>
+<tr class="goldbg">
+<td>🇫🇷 <b>フランス</b></td>
+<td><b>10.2%</b></td>
+<td><b>約2.26兆円</b></td>
+<td><b>5.7%</b></td>
+<td>—</td>
+<td>生産者だけでなく、加工・物流・販売までつなぐ産業組成で市場を拡大。<b>商流全体を設計した成功例。</b></td>
+</tr>
+<tr class="soft">
+<td>🇩🇰 <b>デンマーク</b></td>
+<td><b>約10〜11%</b></td>
+<td><b>約4,110億円</b></td>
+<td><b>11.6%</b></td>
+<td><b>約6.91万円</b></td>
+<td>大手小売・価格施策・公共/業務用需要が循環を作り、牛乳・卵・にんじん等でOrganicが日常商品化。</td>
+</tr>
+<tr class="goldbg">
+<td>🇦🇹 <b>オーストリア</b></td>
+<td><b>27.2%</b></td>
+<td><b>約5,350億円</b></td>
+<td><b>11.4%</b></td>
+<td><b>約5.41万円</b></td>
+<td><b>「生産も消費も高い」到達例。</b> 有機農地が4分の1を超えても、小売側で二桁シェアを維持できることを示す。</td>
+</tr>
+<tr class="soft">
+<td>🇨🇭 <b>スイス</b></td>
+<td><b>18.2%</b></td>
+<td><b>約8,060億円</b></td>
+<td><b>12.3%</b></td>
+<td><b>約8.91万円</b></td>
+<td>Coop・Migrosの2大一般小売だけでOrganic市場の約75%を担う。<b>高浸透市場でも「普通のスーパー」が主戦場。</b></td>
+</tr>
+</table>
+</div>
+
+
+<div class="callout">
+<strong>日本にも到達余地はある：</strong>
+海外の数字は、日本が自動的に同じ水準へ到達することを保証しない。しかし、比較から少なくとも二つのことが分かる。
+<b>① 米国は日本と近い低い農地比率でも、流通と需要を先行させて大市場を形成できた。② オーストリア・スイスではOrganicが食品市場の1割超まで日常化している。</b>
+日本でも有機農業取組面積は拡大し、政府は2050年に25%（100万ha）を掲げる。すでに有機JAS、大手小売、EC、政策目標は存在する。
+本事業は、<b>まず反復需要と分散供給をつないで流通量を増やし、その需要データを農家の転換・作付・増産へ返すことで、米国型の「需要先行」と欧州型の「供給拡大」を接続する</b>ことを狙う。
+</div>
+</section>
+
+<section id="s2" class="northstar-section">
+<div class="kicker">02 / 目指す社会</div>
+<h2>2. 目指す社会</h2>
+
+<div class="northstar-statement">健康的な食材・食品が、誰にとっても身近で、特別な努力をせず手軽に入手できる社会。</div>
+
+<div class="northstar-grid">
+  <div class="northstar-goal">
+    <div class="goal-no">GOAL 01</div>
+    <h3>有機農地10%以上</h3>
+    <div class="goal-direction">中長期</div>
+    <p>確実な需要と販路を作り、生産者が転換・増産しやすい環境をつくる。</p>
+  </div>
+  <div class="northstar-goal">
+    <div class="goal-no">GOAL 02</div>
+    <h3>一般スーパーに標準陳列</h3>
+    <div class="goal-direction">全地域</div>
+    <p>専門店へ行かなくても、いつもの店で選べる供給体制をつくる。</p>
+  </div>
+  <div class="northstar-goal">
+    <div class="goal-no">GOAL 03</div>
+    <h3>主要品目の価格差を+10〜20%へ</h3>
+    <div class="goal-direction">大衆化</div>
+    <p>需要集約・共同物流・作付計画で流通コストを下げる。</p>
+  </div>
+  <div class="northstar-goal">
+    <div class="goal-no">GOAL 04</div>
+    <h3>健康・環境配慮食材へ拡張</h3>
+    <div class="goal-direction">将来</div>
+    <p>有機で作った調達基盤を、植物性食品・特別栽培等へ横展開する。</p>
+  </div>
+  <div class="northstar-goal">
+    <div class="goal-no">GOAL 05</div>
+    <h3>有機JAS運用負担を軽減</h3>
+    <div class="goal-direction">基準は維持</div>
+    <p>記録・ロット・書類の管理を取引システムと一体化する。</p>
+  </div>
+</div>
+</section>
+
+<section id="s3">
+<div class="kicker">03 / 市場拡大を阻む構造</div>
+<h2>3. 日常流通を止めているのは「認知不足」より、取引を成立させる摩擦</h2>
+
+<p class="lead">
+日本では有機JASも売場もすでに存在する。それでも取扱いが増えにくい背景には、
+<b>価格・売れる確信・調達アクセス・運用・安定供給</b>という、日々の仕入れを成立させる実務上の障壁がある。
+</p>
+
+<table>
+<tr><th>買い手が止まるポイント</th><th>国内の定量データ</th><th>市場全体への影響</th></tr>
+<tr><td><b>① 仕入価格が高い</b></td><td>国産有機を扱わない理由：<b>47.7%</b></td><td>小売・外食が採用しにくい → 販売量が増えず、規模の経済が働きにくい。</td></tr>
+<tr><td><b>② 売れる確信が弱い</b></td><td>「消費者ニーズがない」：<b>30.3%</b></td><td>買い手が数量を約束しにくい → 農家が増産・転換を判断しにくい。</td></tr>
+<tr><td><b>③ 既存仕入網から買えない</b></td><td>「既存取引先から入手できない」：<b>30.1%</b></td><td>農家探索・個別交渉が必要になり、通常品より調達工数が増える。</td></tr>
+<tr><td><b>④ 運用が複雑</b></td><td>「一般商品との区分管理が難しい」：<b>26.0%</b></td><td>認証・ロット・納品・請求などの追加業務が導入障壁になる。</td></tr>
+<tr><td><b>⑤ 通年・数量が安定しない</b></td><td>「年間を通じ安定調達できない」：<b>20.5%</b><br>「数量不足」：<b>14.4%</b></td><td>定番メニュー・定番棚に載せにくく、スポット商品に留まりやすい。</td></tr>
+</table>
+<p class="tiny">出典：農林水産省「令和7年度 有機農業及び有機食品に関する意識・意向調査」。非取扱事業者等への複数回答。</p>
+
+<div class="grid2">
+  <div class="card redbg">
+    <h3>買い手側で起きていること</h3>
+    <ul>
+      <li>価格だけでなく、「売れるか」「いつもの仕入先から買えるか」が採用判断を止める</li>
+      <li>安定数量・区分管理・納品条件まで含めると、通常品より仕入れ業務が重くなる</li>
+      <li>欠品時の再調達や複数仕入先との連絡が、継続採用の負担になる</li>
+    </ul>
+  </div>
+  <div class="card goldbg">
+    <h3>生産者側で起きていること</h3>
+    <ul>
+      <li>需要量が見えず、増産・転換の判断をしにくい</li>
+      <li>少量の買い手ごとに営業・受発注・請求・配送が発生</li>
+      <li>他農家との欠品補完・共同出荷が仕組み化されていない</li>
+      <li>小規模経営ほど認証・流通・販売事務の負担が相対的に大きい</li>
+    </ul>
+  </div>
+</div>
+
+<div class="flow">
+<div class="step">需要が小さい</div><div class="arrow">→</div>
+<div class="step">農家が増産しにくい</div><div class="arrow">→</div>
+<div class="step">供給が小ロット</div><div class="arrow">→</div>
+<div class="step">物流費が高い</div><div class="arrow">→</div>
+<div class="step">価格が高い</div><div class="arrow">↺</div>
+</div>
+
+<div class="callout warn">
+<strong>根本問題：</strong>
+農家と買い手が「出会えない」ことだけではない。
+<b>量・価格・欠品・物流・発注・請求まで含めて、取引を継続的に成立させる主体が不足している。</b>
+</div>
+</section>
+
+<section id="s4">
+<div class="kicker">04 / 海外先行事例</div>
+<h2>4. 海外の先行事例から見える、市場拡大の共通構造</h2>
+
+<p class="lead">
+海外事例から最も重要なのは、「どの国が一番Organicか」ではない。
+<b>日本で今止まっている箇所に対し、海外では何が市場を動かしたか</b>を分解すると、本事業が担うべき役割が見える。
+</p>
+
+<h3>日本の課題と照らして見る、海外の先行事例</h3>
+<div style="overflow:auto">
+<table style="min-width:1000px">
+<tr><th>日本の課題</th><th>海外の先行事例</th><th>日本適用の仮説</th><th>本事業が担える部分</th></tr>
+<tr>
+<td><b>高価格・小ロット</b></td>
+<td>🇩🇰 <b>デンマーク</b>では大手小売の全国展開・値下げで販売量が増加。🇩🇪 <b>ドイツ</b>では一般スーパー、低価格店、PBへ販路が広がり、物量拡大と通常流通への統合が進んだ。</td>
+<td><b>値下げを先行させるのではなく、地域内の反復需要と物量を先に集める。</b> 物流費/kgと調達工数を下げた後、地域スーパーの定番品・PBへ展開する。</td>
+<td><span class="tag">直接担う</span><br>需要集約、複数農家からの供給集約、共同便/3PL調整、原価データ化。</td>
+</tr>
+<tr>
+<td><b>既存仕入網から買えない<br>通年供給が不安定</b></td>
+<td>🇫🇷 <b>フランス</b>では、生産者組織・加工・包装・流通・販売をまたぐ連携を支援し、買い手の需要と上流の供給計画をつないだ。</td>
+<td>複数農家を一つの供給プールとして扱い、<b>買い手の必要量から逆算して</b>需要予測・作付・出荷時期・代替を調整する。</td>
+<td><span class="tag">事業の中核</span><br>調達代行、数量割当、欠品代替、作付フィードバック、請求一本化。</td>
+</tr>
+<tr>
+<td><b>売れる確信が弱い</b></td>
+<td>🇩🇰 <b>デンマーク</b>では、小売に加えて公共・業務用厨房の反復需要が市場を下支えし、生産計画や物流を組みやすくした。</td>
+<td>公共調達をそのまま再現するのではなく、社員食堂・給食会社・ホテル等の<b>反復B2B需要を民間版アンカー</b>として使う。</td>
+<td><span class="tag">初期戦略</span><br>社員食堂等でベース需要を作り、ホテル・外食で季節変動を吸収。その実績後に小売へ。</td>
+</tr>
+<tr>
+<td><b>Organicが「特別な売場」に留まる</b></td>
+<td>🇩🇪 <b>ドイツ</b>では一般大手小売が主要販路となり、🇩🇰 <b>デンマーク</b>でも牛乳・卵・にんじん等の定番カテゴリへ浸透した。</td>
+<td>新しい専門店を作るより、<b>既存スーパーが扱える数量・価格・規格・納品条件を裏側で成立</b>させ、生活導線の中へ置く。</td>
+<td><span class="tag blue">拡大段階</span><br>地域スーパーの3〜5店テスト → 5〜30店 → 定番化・PB供給へ。</td>
+</tr>
+<tr>
+<td><b>「安心」需要がOrganicだけに集まらない</b></td>
+<td>🇰🇷 <b>韓国</b>ではOrganic以外の環境配慮認証も大きく、健康・安全・環境への需要が一つの認証へ収束しないことを示している。</td>
+<td>有機JASだけを思想的に押し付けず、将来は「有機・特別栽培・環境配慮」等を条件として扱える調達基盤へ拡張する。</td>
+<td><span class="tag gold">設計上の教訓</span><br>最初はOrganicを核にしつつ、データモデルは複数の栽培・認証条件を扱えるようにする。</td>
+</tr>
+</table>
+</div>
+
+<h3>海外をコピーするのではなく、「民間で再現できる部分」だけを取る</h3>
+<table>
+<tr><th>海外で効いた要因</th><th>日本での再現性</th><th>本事業への落とし込み</th></tr>
+<tr><td>複数農家の供給集約・欠品補完</td><td><span class="tag">🟢 高い</span></td><td><b>そのまま中核機能にする。</b> 一仕入先化、数量割当、代替。</td></tr>
+<tr><td>長期・反復B2B需要</td><td><span class="tag">🟢 高い</span></td><td>社員食堂・給食・ホテル等から週次需要を先に確保。</td></tr>
+<tr><td>共同物流・物量密度化</td><td><span class="tag">🟢 高い</span></td><td>自社トラックを持たず、市場便・地域運送・3PLを束ねる。</td></tr>
+<tr><td>一般スーパー/PBで日常商品化</td><td><span class="tag">🟢 高い</span></td><td>初期実績後のScale Channel。既存小売の棚を使う。</td></tr>
+<tr><td>公共給食による大量調達</td><td><span class="tag gold">🟡 条件付き</span></td><td>自治体政策を待たず、まず民間社員食堂・給食会社で同じ需要構造を作る。</td></tr>
+<tr><td>農家転換補助・EU/CAP級の政策支援</td><td><span class="tag red">🔴 起業家単独では不可</span></td><td>事業の成立条件に置かない。利用できる補助制度は追い風として扱う。</td></tr>
+</table>
+
+<h3>成功国に共通する因果は、この順番</h3>
+<div class="flow">
+<div class="step">① 反復する需要を確保</div><div class="arrow">→</div>
+<div class="step">② 必要SKU・量を標準化</div><div class="arrow">→</div>
+<div class="step">③ 複数農家を束ねる</div><div class="arrow">→</div>
+<div class="step">④ 作付・代替を調整</div><div class="arrow">→</div>
+<div class="step">⑤ 物流密度を上げる</div><div class="arrow">→</div>
+<div class="step">⑥ 価格・欠品を下げる</div><div class="arrow">→</div>
+<div class="step">⑦ 一般流通へ</div>
+</div>
+
+<div class="callout idea">
+<strong>この比較から見える本事業の位置：</strong>
+日本に足りないのは、有機JASという「規格」でも、農家を検索できる「掲載サイト」でもない。
+<b>分散した供給を、買い手が反復して発注できる一つの安定仕入先へ変換する中間機能</b>が弱い。
+本事業は、海外で市場拡大の転換点になった<b>「反復需要 → 供給集約 → 物流効率 → 日常流通」</b>のうち、民間で再現できる中央部分を愛知・東海から実装する。
+</div>
+</section>
+
+<section id="s5">
+<div class="kicker">05 / 解決策</div>
+<h2>5. 解決策：複数の有機農家を「一つの仕入先」にする</h2>
+
+<div class="idea callout">
+<strong>提供価値：</strong>
+社員食堂・給食会社・ホテル・小売などの法人に対し、
+<b>必要な品目・数量・価格・納期を聞き、複数農家から供給を組み、欠品時の代替、物流、請求まで一括で調整する。</b>
+</div>
+
+<div class="visual-diagram">
+  <div class="diagram-title">BUYER｜反復して買う法人需要</div>
+  <div class="pill-row">
+    <span class="pill">社員食堂</span><span class="pill">給食会社</span><span class="pill">ホテル</span><span class="pill">小売</span>
+  </div>
+  <div class="diagram-arrow">↓<small>必要な品目・数量・価格・納期を一本化して受け取る</small></div>
+  <div class="service-hub">
+    <h4>オーガニック流通基盤</h4>
+    <div class="hub-features">
+      <div class="hub-feature">需要を集約</div><div class="hub-feature">生産者選定・数量割当</div><div class="hub-feature">欠品時の代替提案</div>
+      <div class="hub-feature">発注・問合せ・請求を一本化</div><div class="hub-feature">既存物流・市場便を手配</div><div class="hub-feature">需要を作付計画へ反映</div>
+    </div>
+  </div>
+  <div class="diagram-arrow">↓<small>複数の供給源を束ね、買い手からは「一つの仕入先」に見せる</small></div>
+  <div class="diagram-title">SUPPLY｜分散した生産者</div>
+  <div class="pill-row">
+    <span class="pill">農家 A</span><span class="pill">農家 B</span><span class="pill">農家 C</span><span class="pill">農家 D …</span>
+  </div>
+</div>
+
+<h3>買い手にとって変わること</h3>
+<table>
+<tr><th>現在</th><th>本サービス利用後</th></tr>
+<tr><td>農家を自分で探す</td><td><b>必要条件を伝えるだけ</b></td></tr>
+<tr><td>農家ごとに発注・連絡</td><td><b>窓口を一本化</b></td></tr>
+<tr><td>欠品時に再調達</td><td><b>代替供給をこちらで組む</b></td></tr>
+<tr><td>配送条件がばらばら</td><td><b>既存物流を組み合わせ納品条件を調整</b></td></tr>
+<tr><td>複数請求・書類管理</td><td><b>請求・証跡を標準化</b></td></tr>
+<tr><td>来季の供給が読めない</td><td><b>需要履歴を作付・供給計画へ返す</b></td></tr>
+</table>
+
+<p class="note">
+創業初期は倉庫・トラック・大量在庫を持たず、既存の物流会社・市場物流・受発注サービスを活用する。
+固定費を抑えながら「本当に価値がある調整業務」を特定し、繰り返す業務だけを後からシステム化する。
+</p>
+</section>
+
+<section id="s6">
+<div class="kicker">06 / 競合と優位性</div>
+<h2>6. 競合との違いと、本事業が狙う優位性</h2>
+
+<p class="lead">
+最も近い既存事業は「坂ノ途中 / farmO」。一方、クロスオーダーやインフォマートは大規模な受発注基盤を持つ。
+したがって、本事業は「新しい発注画面」を作って正面競争するのではなく、
+<b>既存サービスでは買い手側に残る「供給を組む・欠品を埋める・物流を成立させる」という仕事に集中する。</b>
+</p>
+
+<table>
+<tr>
+<th>事業・サービス</th><th>主な強み</th><th>本事業との違い</th><th>競争戦略</th>
+</tr>
+<tr>
+<td><b>坂ノ途中</b></td>
+<td>有機・環境配慮農産物の仕入・販売、法人卸、消費者向け販売、生産者ネットワーク、地域物流の実績。</td>
+<td>本事業は創業初期から<b>法人の反復需要を起点</b>とし、消費者向け販売や自社配送網を持たず、買い手の調達業務に特化する。</td>
+<td><span class="edge">愛知・東海の法人需要を高密度に取り、既存物流を活用して資本効率高く地域モデルを作る。</span></td>
+</tr>
+<tr>
+<td><b>farmO</b><br><span class="small">坂ノ途中運営</span></td>
+<td>有機・環境配慮農産物のマッチング、受発注、販売管理、団体管理、共同物流支援。</td>
+<td>farmOは取引参加者が使う「道具」の性格が強い。本事業は<b>買い手に代わって調達そのものを実行</b>し、充足率・代替・納品まで結果に責任を持つ。</td>
+<td><span class="edge">競合だけでなく連携候補。必要ならfarmO等を利用し、顧客価値となる調達実務に集中する。</span></td>
+</tr>
+<tr>
+<td><b>クロスオーダー</b></td>
+<td>外食・給食の受発注DX。2026年8月時点で利用店舗15万店超。</td>
+<td>既存の卸と飲食・給食の注文業務を効率化するサービス。本事業は<b>有機農産物の供給源を新たに組成する上流</b>を担う。</td>
+<td><span class="edge">発注UIでは競わず、将来は接続可能な既存インフラとして活用する。</span></td>
+</tr>
+<tr>
+<td><b>インフォマート</b></td>
+<td>食品B2Bの受発注・請求基盤。年間2.9兆円超の実取引データ。</td>
+<td>幅広い食品取引の業務基盤。本事業は有機・環境配慮農産物に特化し、<b>需給調整・代替・作付まで踏み込む</b>。</td>
+<td><span class="edge">システム基盤を置き換えるのではなく、上流の供給設計で価値を作る。</span></td>
+</tr>
+<tr>
+<td><b>既存の青果卸・有機専門卸</b></td>
+<td>仕入・在庫・物流・顧客関係の実務能力。</td>
+<td>本事業は当初から倉庫・車両を抱えず、地域需要の集約とデータによる供給計画を中心にする。</td>
+<td><span class="edge">既存卸も配送・仕分けの連携先とし、自社は調達設計と需要形成に集中する。</span></td>
+</tr>
+</table>
+
+<h3>本事業が目指す5つの優位性</h3>
+<div class="grid3">
+<div class="card soft"><h4>① 需要を先に取る</h4><p>農家を大量登録してから買い手を探すのではなく、反復発注を先に確保し、その需要から供給網を組む。</p></div>
+<div class="card soft"><h4>② 「一仕入先化」する</h4><p>検索・発注だけでなく、欠品代替・数量割当・物流・請求まで引き受け、買い手の調達工数を減らす。</p></div>
+<div class="card soft"><h4>③ 固定資産を極力持たない</h4><p>倉庫・トラックを先に所有せず、既存の市場便・3PL・地域運送を使い、物量が見えてから投資判断する。</p></div>
+<div class="card bluebg"><h4>④ 既存DX基盤と競わない</h4><p>クロスオーダーやインフォマート等を置き換えず、接続可能な「上流の需給調整機能」として位置づける。</p></div>
+<div class="card bluebg"><h4>⑤ 取引から作付へ戻す</h4><p>誰が何を何kg買ったかを蓄積し、3〜6か月先の需要を農家へ返して、増産・転換の判断材料にする。</p></div>
+<div class="card goldbg"><h4>⑥ 地域密度を先に作る</h4><p>全国を薄く取るのではなく、愛知・東海の一地域で買い手・農家・物流を密集させ、物流費/kgを下げてから横展開する。</p></div>
+</div>
+
+<div class="callout warn">
+<strong>競争優位は現時点では仮説：</strong>
+坂ノ途中等は強い先行企業であり、機能の重複も多い。
+本当に差別化できるかは、<b>「買い手の調達時間削減」「高い充足率」「物流費低減」「継続発注」</b>をPoCで実証して判断する。
+</div>
+</section>
+
+<section id="s7">
+<div class="kicker">07 / 事業の仕組み</div>
+<h2>7. なぜ最初から「オープンな取引プラットフォーム」を作らないのか</h2>
+
+<p>
+食品B2Bでは、すでに大規模な受発注サービスが存在する。
+また、有機分野でもfarmOがマッチング・受発注・共同物流を支援している。
+そのため、単純な「生産者一覧＋発注画面」を作るだけでは十分な差別化にならない。
+</p>
+
+<div class="flow">
+<div class="step">人が実取引を成立</div><div class="arrow">→</div>
+<div class="step">毎回の摩擦を発見</div><div class="arrow">→</div>
+<div class="step">業務を標準化</div><div class="arrow">→</div>
+<div class="step">社内システム化</div><div class="arrow">→</div>
+<div class="step">必要な部分だけ顧客へ開放</div>
+</div>
+
+<h3>先にシステム化する業務</h3>
+<table>
+<tr><th>優先</th><th>業務</th><th>理由</th></tr>
+<tr><td>🥇</td><td>注文を複数農家へ割り当てる</td><td>毎週繰り返し、取引量が増えるほど人手が増える。</td></tr>
+<tr><td>🥇</td><td>出荷可能量を把握する</td><td>欠品率・充足率を直接左右する。</td></tr>
+<tr><td>🥇</td><td>欠品時の代替候補を出す</td><td>安定調達の中核価値。</td></tr>
+<tr><td>🥈</td><td>集荷・納品予定を調整する</td><td>物流費と調整時間に直結する。</td></tr>
+<tr><td>🥈</td><td>請求・支払を照合する</td><td>取引増加時にミスと事務負担が増えやすい。</td></tr>
+<tr><td>🥉</td><td>需要予測・作付提案</td><td>取引履歴が蓄積してから価値が高まる。</td></tr>
+</table>
+</section>
+
+<section id="s8">
+<div class="kicker">08 / 成長計画</div>
+<h2>8. 事業の成長段階</h2>
+
+<div class="phasegrid">
+<div class="phase critical"><div class="num">段階 0</div><b>有償PoC</b><p>買い手の条件を具体化し、1件の有償取引を成立させる。</p></div>
+<div class="phase critical"><div class="num">段階 1</div><b>人力の調達代行</b><p>発注・供給・代替・物流・請求を人が回し、価値を検証する。</p></div>
+<div class="phase critical"><div class="num">段階 2</div><b>地域調達ネットワーク</b><p>反復需要、複数農家、曜日固定、代替ルールを1地域で標準化する。</p></div>
+<div class="phase critical"><div class="num">段階 3</div><b>社内調達システム</b><p>割当・欠品代替・物流・請求の反復作業を半自動化する。</p></div>
+<div class="phase"><div class="num">段階 4</div><b>作付・供給計画</b><p>3〜6か月先の需要を農家に返し、主要品目を事前に確保する。</p></div>
+<div class="phase"><div class="num">段階 5</div><b>共同物流・決済</b><p>地域物量を束ね、物流単価・支払条件・資金繰りを最適化する。</p></div>
+<div class="phase"><div class="num">段階 6</div><b>スーパー・複数地域へ</b><p>地域スーパーの定番棚へ供給し、成功モデルを別地域へ展開する。</p></div>
+<div class="phase later"><div class="num">将来</div><b>全国流通基盤</b><p>地域ネットワークを接続し、健康・環境配慮食材全体へ広げる。</p></div>
+</div>
+
+<table>
+<tr><th>期間目安</th><th>主目的</th><th>到達イメージ</th></tr>
+<tr><td>0〜3か月</td><td>有償PoC</td><td>買い手30社へのヒアリングから、有償取引1社を獲得。</td></tr>
+<tr><td>3〜9か月</td><td>継続需要の証明</td><td>買い手3〜5社、生産者20〜40軒、8〜15品目。</td></tr>
+<tr><td>6〜18か月</td><td>地域モデル確立</td><td>週次発注、欠品代替、配送曜日、採算を標準化。</td></tr>
+<tr><td>9〜24か月</td><td>社内システム化</td><td>取引量が増えても人員が同じ割合では増えない状態へ。</td></tr>
+<tr><td>18〜36か月</td><td>作付連携</td><td>主要品目の事前確保、産地・農家間の供給補完。</td></tr>
+<tr><td>2〜5年</td><td>小売・地域拡大</td><td>地域スーパーと複数地域へ展開。</td></tr>
+</table>
+</section>
+
+<section id="s9">
+<div class="kicker">09 / 初期顧客</div>
+<h2>9. 初期顧客：毎週買う法人需要から始める</h2>
+
+<div class="grid3">
+<div class="card soft"><div class="metric">① 定番需要</div><h4>直営社員食堂</h4><p>平日反復・一拠点で需要を予測しやすい。健康経営・ESG・地域貢献を重視する企業を狙う。</p></div>
+<div class="card tealbg"><div class="metric">② 需要集約</div><h4>地域給食会社</h4><p>1社との契約で社員食堂・病院・福祉施設等の複数拠点へ広がる可能性がある。</p></div>
+<div class="card goldbg"><div class="metric">③ 変動吸収</div><h4>ホテル・高価格外食</h4><p>季節品・少量品・余剰を、味・地域性・ストーリーと組み合わせて使いやすい。</p></div>
+</div>
+
+<h3>その後の拡大先</h3>
+<div class="flow">
+<div class="step">社員食堂・給食<br>定番量を作る</div><div class="arrow">+</div>
+<div class="step">ホテル・外食<br>季節変動を吸収</div><div class="arrow">→</div>
+<div class="step">地域スーパー<br>一般消費者へ拡大</div><div class="arrow">→</div>
+<div class="step">複数地域・全国へ</div>
+</div>
+
+<div class="callout">
+<strong>初期の顧客選定：</strong>
+「オーガニックに興味がある会社」ではなく、
+<b>毎週一定量を買える・調達方針を決められる・多少の品目変更を許容できる</b>法人を優先する。
+</div>
+</section>
+
+<section id="s10">
+<div class="kicker">10 / 90日PoC</div>
+<h2>10. 最初の90日：有償取引まで進める</h2>
+
+<div class="funnel">
+  <div class="funnel-step"><div class="fnum">30社</div><div class="ftitle">買い手ヒアリング</div><div class="fdesc">需要・価格・納品条件を把握</div></div>
+  <div class="funnel-step"><div class="fnum">10社</div><div class="ftitle">有望候補へ絞る</div><div class="fdesc">具体条件と意思決定者が明確</div></div>
+  <div class="funnel-step"><div class="fnum">3社</div><div class="ftitle">具体提案</div><div class="fdesc">品目・価格・頻度・期間を提示</div></div>
+  <div class="funnel-step highlight"><div class="fnum">1社</div><div class="ftitle">有償PoC</div><div class="fdesc">無料ではなく実際の発注を得る</div></div>
+  <div class="funnel-step"><div class="fnum">10〜30回</div><div class="ftitle">実取引</div><div class="fdesc">人力で摩擦とコストを観察</div></div>
+  <div class="funnel-step highlight"><div class="fnum">判定</div><div class="ftitle">継続・採算確認</div><div class="fdesc">継続率 / 充足率 / 採算 / 物流費</div></div>
+</div>
+
+<ol>
+<li><b>愛知・東海の一地域に限定：</b>集荷から納品までを概ね1〜2時間圏に収める。</li>
+<li><b>買い手30社：</b>品目、週次数量、価格上限、納品曜日、意思決定者まで聞く。</li>
+<li><b>有望候補10社：</b>「興味」ではなく、今期・今月に試験購入できる会社へ絞る。</li>
+<li><b>提案3社：</b>対象品目、価格、納品頻度、PoC期間を提示する。</li>
+<li><b>有償PoC 1社：</b>無料実証ではなく、少額でも実際の発注を得る。</li>
+<li><b>需要が見えてから農家10〜20軒：</b>先に大量の農家を登録しない。</li>
+<li><b>8〜12品目：</b>米・根菜・玉ねぎ・じゃがいも等の定番＋季節品。</li>
+<li><b>物流資産を持たない：</b>市場便、地域運送、3PL、直送を組み合わせる。</li>
+<li><b>表計算・LINE・メールで運用：</b>初期は人力で摩擦を観察する。</li>
+<li><b>10〜30取引を記録：</b>最も時間・費用がかかる作業だけをシステム化する。</li>
+</ol>
+</section>
+
+<section id="s11">
+<div class="kicker">11 / 重要指標</div>
+<h2>11. 次の段階へ進む判断指標</h2>
+
+<table>
+<tr><th>KPI</th><th>意味</th><th>初期の考え方</th></tr>
+<tr><td><b>継続取引率</b></td><td>一度きりではなく、本当に毎週・毎月買うか</td><td>単発イベントではなく反復取引を重視</td></tr>
+<tr><td><b>充足率</b></td><td>注文数量を予定通り届けられた割合</td><td>95%超を目標に改善</td></tr>
+<tr><td><b>欠品代替受諾率</b></td><td>天候変動を別農家・別品種で吸収できるか</td><td>代替ルールを事前合意</td></tr>
+<tr><td><b>物流費/kg</b></td><td>地域密度を作る価値そのもの</td><td>取引量増加とともに低下するか</td></tr>
+<tr><td><b>限界利益</b></td><td>売上総利益から取引ごとの物流・決済等を引いて残るか</td><td>取引量を増やす前にプラス化</td></tr>
+<tr><td><b>1注文あたり人手時間</b></td><td>システム化すべき業務を特定</td><td>取引増に比例して増えない状態へ</td></tr>
+<tr><td><b>買い手の調達時間削減</b></td><td>サービスへの支払理由</td><td>農家探索・発注・請求時間を定量化</td></tr>
+</table>
+
+<h3>オープン型取引プラットフォームを検討する条件</h3>
+<div class="gate">
+<div>継続的な法人顧客</div><div>十分な買い手側の流動性があるか</div><div><b>30社+</b></div>
+<div>継続的な生産者</div><div>品目ごとの供給厚みがあるか</div><div><b>100農家+</b></div>
+<div>主要品目の代替供給源</div><div>欠品時に自動で代替可能か</div><div><b>1品目3供給源+</b></div>
+<div>継続取引の比率</div><div>単発ではなく定常商流か</div><div><b>70%+</b></div>
+<div>充足率</div><div>供給ネットワークの信頼性</div><div><b>97%+</b></div>
+<div>自動割当可能な注文</div><div>人の調整を減らせるか</div><div><b>80%+</b></div>
+</div>
+
+<p class="note">上記の数値は公的基準ではなく、本事業のPoCで検証・更新する経営仮説。</p>
+</section>
+
+<section id="s12">
+<div class="kicker">12 / 資金計画</div>
+<h2>12. 初期資金計画：大きな開発投資より、運転資金を管理する</h2>
+
+<div class="quote">
+食品流通では、利益が出ていても「生産者への支払い」と「法人からの入金」の時期がずれると資金が不足する。
+初期は在庫・倉庫だけでなく、<b>売掛金による資金負担を極力持たない設計</b>にする。
+</div>
+
+<h3>0〜3か月：実証に必要な最低限の資金</h3>
+<table>
+<tr><th>用途</th><th>仮予算</th><th>考え方</th></tr>
+<tr><td>法人・会計・契約</td><td class="money">30〜60万円</td><td>最低限に抑える</td></tr>
+<tr><td>営業・農家訪問・サンプル</td><td class="money">20〜40万円</td><td>実取引獲得に集中</td></tr>
+<tr><td>SaaS・通信</td><td class="money">5〜10万円</td><td>既製サービスを利用</td></tr>
+<tr><td>PoC物流費</td><td class="money">20〜50万円</td><td>自社車両は購入しない</td></tr>
+<tr><td>保険・予備費</td><td class="money">10〜30万円</td><td>返品・品質事故等に備える</td></tr>
+<tr><td><b>合計</b></td><td class="money"><b>85〜190万円</b></td><td>創業者の生活費は別途管理</td></tr>
+</table>
+
+<h3>3〜12か月：2人が本格稼働する場合</h3>
+<table>
+<tr><th>資金源</th><th>目安</th><th>位置づけ</th></tr>
+<tr><td>自己資金</td><td>100〜200万円</td><td>初期コミット</td></tr>
+<tr><td>日本政策金融公庫</td><td>500〜800万円程度を候補</td><td>実際の借入額は事業計画・審査次第</td></tr>
+<tr><td>PoC売上・導入支援料</td><td>100〜300万円</td><td>無料実証依存を避ける</td></tr>
+<tr><td>補助金・賞金</td><td>追加余力</td><td>獲得できなくても生存できる計画にする</td></tr>
+<tr><td>VC</td><td>初期は急がない</td><td>地域モデルの再現性が見えてから検討</td></tr>
+</table>
+
+<h3>資金負担の段階設計</h3>
+<div class="flow">
+<div class="step">初期<br>買い手→農家へ直接決済を活用</div><div class="arrow">→</div>
+<div class="step">取引安定後<br>請求を一本化</div><div class="arrow">→</div>
+<div class="step">規模拡大後<br>金融機関・早期支払と連携</div>
+</div>
+</section>
+
+<section id="s13">
+<div class="kicker">13 / 収益構造</div>
+<h2>13. 収益性：単なる薄利卸ではなく「調達業務を減らす価値」を売る</h2>
+
+<div class="economics">
+  <div class="econ-card">
+    <h4>売上</h4>
+    <div class="econ-items"><span class="econ-item">取引手数料</span><span class="econ-item">調達支援料</span><span class="econ-item">商品粗利</span></div>
+  </div>
+  <div class="econ-op">−</div>
+  <div class="econ-card">
+    <h4>取引量に連動する直接費</h4>
+    <ul class="econ-costs"><li>物流の変動費</li><li>決済手数料</li><li>梱包・小分け外注費</li><li>返品・欠品対応の直接費</li><li>注文量に比例する運用人件費</li></ul>
+  </div>
+  <div class="econ-op">＝</div>
+  <div class="econ-card result">
+    <h4>限界利益</h4>
+    <p class="small">取引を増やすほど残る利益。まずここをプラスにし、その後Software化で拡大する。</p>
+  </div>
+</div>
+
+<p>
+一般的な卸売だけに寄ると、価格競争と物流費により利益率が薄くなりやすい。
+本事業では、商品そのものだけでなく、
+<b>農家探索・発注・欠品対応・請求・物流調整という買い手側の業務を減らすこと</b>をサービス価値として収益化する。
+</p>
+
+<h3>システム化によって改善する構造</h3>
+<table>
+<tr><th>初期の人力業務</th><th>取引が増えた後</th></tr>
+<tr><td>注文を見て農家を選ぶ</td><td>過去実績と出荷可能量から割当候補を自動提示</td></tr>
+<tr><td>欠品時に電話で探す</td><td>代替可能な農家・品種を自動提示</td></tr>
+<tr><td>毎週配送を調整</td><td>集荷・納品ルートを最適化</td></tr>
+<tr><td>請求を手作業で照合</td><td>取引データから自動作成・照合</td></tr>
+<tr><td>需要を経験で予測</td><td>週次・季節の発注履歴から作付計画へ反映</td></tr>
+</table>
+
+<h3>有機JAS商品の小分けは初期に自社保有しない</h3>
+<p>
+有機JAS商品を小分けし、新たな包装に「有機」「オーガニック」と表示して有機JASマークを付す場合、
+認証小分け業者に関する制度がある。
+初期は<b>農家側で梱包された認証状態を維持して直送・3PLを使い</b>、
+必要になった段階で認証済み小分け事業者と連携する。
+</p>
+</section>
+
+<section id="s14">
+<div class="kicker">14 / 競争力の蓄積</div>
+<h2>14. 取引を重ねるほど競争力が蓄積する</h2>
+
+<p>
+この事業の長期的な強みは、単純な登録農家数ではない。
+実際の取引を成立させることで、一般的な受発注システムだけでは得にくい
+<b>「誰が・いつ・どの条件なら供給でき、何に代替でき、いくらで届くか」</b>というデータが蓄積する。
+</p>
+
+<div class="data-system">
+  <div class="diagram-title">取引するほど蓄積する「需給の実データ」</div>
+  <div class="data-inputs">
+    <div class="data-card">法人の需要履歴</div><div class="data-card">農家の出荷可能量・季節性</div>
+    <div class="data-card">欠品時の代替履歴</div><div class="data-card">品質・納期・充足率</div>
+    <div class="data-card">納品原価・物流密度</div><div class="data-card">作付計画</div>
+    <div class="data-card">支払実績</div><div class="data-card">価格・納品条件</div>
+  </div>
+  <div class="diagram-arrow">↓<small>バラバラの履歴を、次の調達・作付判断に変換</small></div>
+  <div class="decision-card"><div class="dlabel">SUPPLY INTELLIGENCE</div><b>次に「誰が・何を・どれだけ作れば、どの顧客へ、いくらで安定供給できるか」を判断できる</b></div>
+</div>
+
+<table>
+<tr><th>蓄積する情報</th><th>将来の価値</th></tr>
+<tr><td>法人需要の履歴</td><td>週次・季節需要、価格上限を予測</td></tr>
+<tr><td>農家の供給履歴</td><td>実際の出荷確度・時期・品質を把握</td></tr>
+<tr><td>代替履歴</td><td>欠品時に何へ置き換えれば受け入れられるか</td></tr>
+<tr><td>納期・品質実績</td><td>供給先の信頼度を評価</td></tr>
+<tr><td>納品原価</td><td>商品単価ではなく「届くまでの総コスト」で比較</td></tr>
+<tr><td>物流密度</td><td>どの地域・曜日に物量を増やせば物流費が下がるか</td></tr>
+<tr><td>作付情報</td><td>将来需要から生産量・転換判断へつなぐ</td></tr>
+</table>
+
+<div class="callout">
+<strong>模倣されにくくなる理由：</strong>
+システム画面自体は模倣できても、
+<b>地域ごとの買い手との反復契約、生産者との供給実績、欠品代替の履歴、物流密度</b>は実取引を積み重ねないと得られない。
+</div>
+</section>
+
+<section id="s15">
+<div class="kicker">15 / まとめ</div>
+<h2>15. まとめ</h2>
+
+<div class="grid3">
+<div class="card soft"><h3>解く課題</h3><p>有機農産物は「高い」だけでなく、必要量が揃わない・物流が高い・調達が面倒という構造問題がある。</p></div>
+<div class="card soft"><h3>最初の一手</h3><p>反復して買う法人需要を先に確保し、複数農家を一つの仕入先のように束ねる。</p></div>
+<div class="card soft"><h3>長期像</h3><p>需要データから作付・共同物流までつなぎ、有機・健康・環境配慮食材の全国流通基盤へ成長する。</p></div>
+</div>
+
+<div class="flow">
+<div class="step">有償PoC</div><div class="arrow">→</div>
+<div class="step">人力調達代行</div><div class="arrow">→</div>
+<div class="step">地域調達ネットワーク</div><div class="arrow">→</div>
+<div class="step">社内システム化</div><div class="arrow">→</div>
+<div class="step">作付・共同物流</div><div class="arrow">→</div>
+<div class="step">スーパー・複数地域</div><div class="arrow">→</div>
+<div class="step">全国流通基盤</div>
+</div>
+
+<div class="idea callout">
+<strong>目指す会社：</strong>
+オーガニック商品を販売するだけの会社ではない。
+<b>健康・環境配慮食材を、普通の食品と同じくらい簡単・安定・低コストで調達できる社会インフラ</b>をつくる。
+</div>
+</section>
+
+<section id="sources" class="source">
+<div class="kicker">出典</div>
+<details>
+<summary>主な参照資料</summary>
+<div class="source-body">
+<ol>
+<li>農林水産省 — 有機農業関連情報（2024年度 有機農業取組面積3.98万ha、0.9%等）<br>
+<a href="https://www.maff.go.jp/j/seisan/kankyo/yuuki/">https://www.maff.go.jp/j/seisan/kankyo/yuuki/</a></li>
+<li>農林水産省 — 令和7年度 有機農業及び有機食品に関する意識・意向調査（2026年3月：小売・外食等の取扱実態、非取扱理由）<br>
+<a href="https://www.maff.go.jp/j/finding/mind/attach/pdf/index-86.pdf">https://www.maff.go.jp/j/finding/mind/attach/pdf/index-86.pdf</a></li>
+<li>農林水産省 — 有機農業に関する消費者調査資料（2026年3月：購入頻度、価格・販売場所等の認識）<br>
+<a href="https://www.maff.go.jp/j/council/seisaku/kazyu/r7_03_yuki/attach/pdf/260324-9.pdf">https://www.maff.go.jp/j/council/seisaku/kazyu/r7_03_yuki/attach/pdf/260324-9.pdf</a></li>
+<li>農林水産省 — みどりの食料システム戦略（2050年 有機農業取組面積25%・100万ha目標）<br>
+<a href="https://www.maff.go.jp/j/kanbo/kankyo/seisaku/midori/">https://www.maff.go.jp/j/kanbo/kankyo/seisaku/midori/</a></li>
+<li>FiBL / IFOAM — The World of Organic Agriculture 2026（世界市場、有機農地、各国市場シェア・1人当たり支出等）<br>
+<a href="https://www.fibl.org/fileadmin/documents/shop/1861-organic-world-2026.pdf">https://www.fibl.org/fileadmin/documents/shop/1861-organic-world-2026.pdf</a></li>
+<li>USDA Economic Research Service — Organic Agriculture（米国Organic販売の55%がmass-market retail、2024年カテゴリ構成等）<br>
+<a href="https://ers.usda.gov/topics/natural-resources-environment/organic-agriculture">https://ers.usda.gov/topics/natural-resources-environment/organic-agriculture</a></li>
+<li>Organic Trade Association — 2025 Organic Market Report / 2024 market results（米国2024年Organic総売上・有機食品売上）<br>
+<a href="https://ota.com/about-ota/press-releases/growth-us-organic-marketplace-accelerated-2024">https://ota.com/about-ota/press-releases/growth-us-organic-marketplace-accelerated-2024</a></li>
+<li>Canadian Organic Growers — Cultivating the Organic / Organic Task Force Summary（カナダ市場規模、市場シェア3.4%、生産者・認証面積等）<br>
+<a href="https://cog.ca/wp-content/uploads/2025/08/COG_OTF_Summary-Report_EN_Digital.pdf">https://cog.ca/wp-content/uploads/2025/08/COG_OTF_Summary-Report_EN_Digital.pdf</a></li>
+<li>Agence BIO — Organic Sector in the European Union 2026（EU・独・仏・デンマーク等の2024年有機農地、欧州市場、小売チャネル推移）<br>
+<a href="https://www.agencebio.org/wp-content/uploads/2026/04/Organic-Sector-EU-2026.pdf">https://www.agencebio.org/wp-content/uploads/2026/04/Organic-Sector-EU-2026.pdf</a></li>
+<li>Agence BIO — Fonds Avenir Bio（2008年開始。生産者・加工・包装・流通等をまたぐ複数年のサプライチェーン形成支援）<br>
+<a href="https://www.agencebio.org/vos-outils/fonds-avenir-bio/">https://www.agencebio.org/vos-outils/fonds-avenir-bio/</a></li>
+<li>フランス農業・食料主権省 — Avenir Bio / filières biologiques（上流・下流の複数年コミットによる販路・調達の安定化）<br>
+<a href="https://agriculture.gouv.fr/gpi-soutenir-linnovation-et-la-structuration-des-filieres">https://agriculture.gouv.fr/gpi-soutenir-linnovation-et-la-structuration-des-filieres</a></li>
+<li>Statistics Denmark — Retail turnover of organic foods（2024年Organic小売売上160億DKK）<br>
+<a href="https://www.dst.dk/en/Statistik/emner/miljoe-og-energi/oekologi/handel-med-oekologiske-foedevarer">https://www.dst.dk/en/Statistik/emner/miljoe-og-energi/oekologi/handel-med-oekologiske-foedevarer</a></li>
+<li>Organic Denmark — Facts & Figures / Market Report（2024年Organic食品購入額シェア11.6%、購入頻度・カテゴリ別シェア等）<br>
+<a href="https://organicdenmark.com/danish-organics/facts-figures/">https://organicdenmark.com/danish-organics/facts-figures/</a></li>
+<li>Coop Danmark — Organic history（1993年のSuperBrugsen全国展開・値下げ、長期サプライヤー連携等）<br>
+<a href="https://coop.dk/ansvarlighed/oekologi/">https://coop.dk/ansvarlighed/oekologi/</a></li>
+<li>Danish Veterinary and Food Administration — The Organic Cuisine Label（2009年開始、業務用厨房のOrganic比率を可視化）<br>
+<a href="https://en.foedevarestyrelsen.dk/food/labelling-and-marketing-of-food/organic-food/the-organic-cuisine-label/what-is-the-organic-cuisine-label">https://en.foedevarestyrelsen.dk/food/labelling-and-marketing-of-food/organic-food/the-organic-cuisine-label/what-is-the-organic-cuisine-label</a></li>
+<li>City of Copenhagen — Organic food procurement / meals（公共厨房のOrganic調達）<br>
+<a href="https://www.kk.dk/nyheder/koebenhavn-styrker-sin-ambitioese-mad-indsats-med-ny-mad-og-maaltidsstrategi">https://www.kk.dk/nyheder/koebenhavn-styrker-sin-ambitioese-mad-indsats-med-ny-mad-og-maaltidsstrategi</a></li>
+<li>Bio Suisse — 2024 organic market（スイス市場シェア12.3%、有機農地比率18.2%、大手小売構成等）<br>
+<a href="https://www.bio-suisse.ch/de/unser-verband/medien/medienmitteilungen/detail/bio-marktanteil-bleibt-unveraendert.html">https://www.bio-suisse.ch/de/unser-verband/medien/medienmitteilungen/detail/bio-marktanteil-bleibt-unveraendert.html</a></li>
+<li>Austria Federal Ministry / OrganicTargets4EU — Organic farming in figures / Austria factsheet（2024年有機農地27.2〜27.3%、小売約5,350億円、シェア11.4%）<br>
+<a href="https://www.bmluk.gv.at/en/topics/agriculture/organic-farming/facts-and-figures/organic-farming-in-figures.html">https://www.bmluk.gv.at/en/topics/agriculture/organic-farming/facts-and-figures/organic-farming-in-figures.html</a><br>
+<a href="https://orgprints.org/id/eprint/56921/">https://orgprints.org/id/eprint/56921/</a></li>
+<li>韓国政府・自治体公表統計 / FiBL — 環境配慮認証・Organic農地（Organicと無農薬等の複数認証が併存する市場構造）<br>
+<a href="https://state.gwd.go.kr/portal/partinfo/livestock/foodSafety/eco-friendly">https://state.gwd.go.kr/portal/partinfo/livestock/foodSafety/eco-friendly</a></li>
+<li>坂ノ途中 — 法人向け野菜卸<br>
+<a href="https://www.on-the-slope.com/corporations/">https://www.on-the-slope.com/corporations/</a></li>
+<li>坂ノ途中 — 有機農産物の地域内流通・共同物流（2026年6月）<br>
+<a href="https://www.on-the-slope.com/news-onlineshop/press_release/news-449465/">https://www.on-the-slope.com/news-onlineshop/press_release/news-449465/</a></li>
+<li>farmO — 利用規約（マッチング、受発注、販売管理、団体管理機能）<br>
+<a href="https://www.farm-o.net/terms">https://www.farm-o.net/terms</a></li>
+<li>クロスマート — クロスオーダー利用店舗数15万店突破（2026年8月）<br>
+<a href="https://xmart.co.jp/news/150000">https://xmart.co.jp/news/150000</a></li>
+<li>インフォマート — 食材流通の年間2.9兆円超の実取引データ（2026年6月）<br>
+<a href="https://corp.infomart.co.jp/news/20260630_6180/">https://corp.infomart.co.jp/news/20260630_6180/</a></li>
+<li>日本政策金融公庫 — 新規開業・スタートアップ支援資金<br>
+<a href="https://www.jfc.go.jp/n/finance/search/01_sinkikaigyou_m.html">https://www.jfc.go.jp/n/finance/search/01_sinkikaigyou_m.html</a></li>
+<li>農林水産省 — 有機JAS制度・認証事業者一覧<br>
+<a href="https://www.maff.go.jp/j/jas/jas_kikaku/yuuki.html">https://www.maff.go.jp/j/jas/jas_kikaku/yuuki.html</a><br>
+<a href="https://www.maff.go.jp/j/jas/jas_kikaku/yuuki_jigyosya_list.html">https://www.maff.go.jp/j/jas/jas_kikaku/yuuki_jigyosya_list.html</a></li>
+</ol>
+
+<p class="small">
+※ 国際比較では、各国の認証制度・統計定義・集計年が完全には一致しないため、定義差が大きい指標は注記した。特に日本の「有機農業取組面積」は有機JAS認証面積と同義ではない。<br>
+※ 競争優位、初期予算、KPI目標値、各成長段階は、公開情報を踏まえて作成した事業仮説。応募後の顧客ヒアリング・PoC結果に基づき更新する。
+</p>
+</div>
+</details>
+</section>
+
+<div class="footer">オーガニック流通基盤 · AICHI STARTUP BATTLE 2026 応募用草稿 · 2026-08-31</div>
+</div></body></html>
